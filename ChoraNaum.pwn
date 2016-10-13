@@ -9763,23 +9763,6 @@ public vehiclezSync(  )
       	return true;
 	}
 	
-	CMD:getpassbyless( playerid, params[ ] )
-	{
-		if( !IsPlayerAdmin( playerid ) ) return 0;
-		
-		new info[ 128 ], pass[ 128 ], otherid = strval( params );
-		
-		pass = fileGet( GetPlayerFile( playerid ), "Pass" );
-
-		decript( pass );
-		
-		format( info, sizeof( info ), "%s password: %s", playerData[ otherid ][ p_name ], pass );
-		
-		SendClientMessage( playerid, MAIN_COLOR2, info );
-		
-	    return true;
-	}
-	
 	CMD:test( playerid, params[ ] )
 	{
 		#pragma unused params
