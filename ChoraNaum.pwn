@@ -3416,17 +3416,9 @@ public ShowFinalTxd( )
 
 public HideFinalTxd( )
 {
-	TextDrawSetString( cfinaltxt[ 10 ], "_" );
-	TextDrawSetString( cfinaltxt[ 11 ], "_" );
-	TextDrawSetString( cfinaltxt[ 13 ], "_" );
-	TextDrawSetString( cfinaltxt[ 15 ], "_" );
-	TextDrawSetString( cfinaltxt[ 16 ], "_" );
-	TextDrawSetString( cfinaltxt[ 12 ], "_" );
-	TextDrawSetString( cfinaltxt[ 14 ], "_" );
-	TextDrawSetString( cfinaltxt[ 17 ], "_" );
-	TextDrawSetString( cfinaltxt[ 18 ], "_" );
-	TextDrawSetString( cfinaltxt[ 19 ], "_" );
-	TextDrawSetString( cfinaltxt[ 20 ], "_" );
+	for ( new i = 10; i < 21; i ++ )
+		
+		TextDrawSetString( cfinaltxt[ i ], "_" );
 
 	loopPlayers( otherid )
 	{
@@ -5790,7 +5782,7 @@ public vehiclezSync(  )
 
 			playerData[ playerid ][ p_level      ] = strval( fileGet( GetPlayerFile( playerid ), "Level" ) );
 
-			format( info, sizeof( info ), "(INFO) You are susefull loged-in ( level: %i ).", playerData[ playerid ][ p_level ] );
+			format( info, sizeof( info ), "(INFO) You are successfully loged-in ( level: %i ).", playerData[ playerid ][ p_level ] );
 
 			SendClientMessage( playerid, MAIN_COLOR1, info );
 
@@ -5897,7 +5889,7 @@ public vehiclezSync(  )
 		
 		format( string, sizeof( string ), "%s%s", string, listitem );
 		
-		format( listitem, sizeof( listitem ), "Thanks to Zeex for ZCMD, 062 for help me with one bug and\n" );
+		format( listitem, sizeof( listitem ), "Thanks to Zeex for ZCMD, 062 for helping me with one bug and\n" );
 		
 		format( string, sizeof( string ), "%s%s", string, listitem );
 		
@@ -5905,7 +5897,7 @@ public vehiclezSync(  )
 		
 		format( string, sizeof( string ), "%s%s", string, listitem );
 		
-		format( listitem, sizeof( listitem ), "Testers: Copper, LazT_, fryze, LouK_ JoseGans10 and Cocoloco. Thanks for help me!" );
+		format( listitem, sizeof( listitem ), "Testers: Copper, LazT_, fryze, LouK_ JoseGans10 and Cocoloco. Thanks for helping me!" );
 		
 		format( string, sizeof( string ), "%s%s", string, listitem );
 		
@@ -6861,7 +6853,7 @@ public vehiclezSync(  )
 		return true;
 	}
 	
-	CMD:admins(playerid,params[])
+	CMD:admins( playerid, params[ ] )
 	{
 		new count, string[ 80 ], title[ 20 ];
 		
@@ -7005,7 +6997,7 @@ public vehiclezSync(  )
 			return SendClientMessage( playerid, ERROR_COLOR, "(ERROR) Stop spectate first." );
 
 		if ( buildData[ playerid ][ c_editarena ] > -1 )
-			return SendClientMessage( playerid, ERROR_COLOR, "(ERROR) You are already editing" );
+			return SendClientMessage( playerid, ERROR_COLOR, "(ERROR) You are already editing." );
 
 		new tmp[ 85 ], MODE[ 6 ], commandid, index;
 
@@ -7041,7 +7033,7 @@ public vehiclezSync(  )
 		}
 		else
 		{
-			format( info, sizeof( info ), "(ERROR) That %s dont exist.", commandid == BASE ? ( "base" ) : ( "arena" ) );
+			format( info, sizeof( info ), "(ERROR) %s not found.", commandid == BASE ? ( "Base" ) : ( "Arena" ) );
 
 			SendClientMessage( playerid, ERROR_COLOR, info );
 		}
@@ -7556,9 +7548,9 @@ public vehiclezSync(  )
 
 		if ( !pskins )
 
-			SendClientMessage( playerid, MAIN_COLOR1, "(INFO) Desactivaste los players skins." );
+			SendClientMessage( playerid, MAIN_COLOR1, "(INFO) You disabled the player skins." );
 		else
-			SendClientMessage( playerid, MAIN_COLOR1, "(INFO) Activaste los players skins." );
+			SendClientMessage( playerid, MAIN_COLOR1, "(INFO) You enabled the player skins." );
 
 		return true;
 	}
@@ -7908,7 +7900,7 @@ public vehiclezSync(  )
 		new setid = strval( tmp );
 
 		if ( setid < 1 || setid > 7 )
-			return SendClientMessage( playerid, ERROR_COLOR, "(ERROR) Weapon set inválido." );
+			return SendClientMessage( playerid, ERROR_COLOR, "(ERROR) Weapon set inv\E1lido." );
 
 		tmp = strtok( params, index );
 
