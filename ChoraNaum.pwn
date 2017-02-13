@@ -3,12 +3,7 @@
 # 		Gamemode: A/D Chora Naum                                               #
 # 		Version: 2.0                                                           #
 #                                                                              #
-# 		(c) 2009, ultm.pwn, [MrS]Lake                                          #
-#                                                                              #
 *******************************************************************************/
-/*~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
- INCLUDE: ultm_h.pwn
-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-*/
 
 #include    <a_samp>
 #include	<zcmd>
@@ -81,8 +76,6 @@ AntiDeAMX()
 #define INT_FILE      	"ultimate/ints.ini"
 #define CONFIG_FILE    	"ultimate/config.ini"
 #define NICKLOG_FILE   	"ultimate/nickLog.ini"
-
-#define FINAL_AUDIO "http://api.ning.com/files/F52AlGXknZIWT0MfmBaJt*VbjgkNzoXW0Q1FQe8OyrEP*3W6EYe0DxWgLp2GJtuAQVjmu441dsajGaoiLLDYO3zIuATI-HJV/Paradise.mp3"
 
 #define WEAPON_DIALOG1 100
 #define WEAPON_DIALOG2 101
@@ -3324,7 +3317,6 @@ public ClanWarFinal(  )
 		
 		loopPlayers( playerid )
 		{
-			PlayAudioStreamForPlayer( playerid, FINAL_AUDIO );
 			SetPlayerCameraPos	  ( playerid, -2812.91, 1157.25, 19.52 );
 			SetPlayerCameraLookAt ( playerid, -2809.16, 1159.95, 21.42 );
 			SetPlayerPos    	  ( playerid, -2812.91, 1157.25, 0 );
